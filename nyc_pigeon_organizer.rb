@@ -7,10 +7,10 @@ def nyc_pigeon_organizer(data)
             end
         end
     end
-    x = final.keys 
+    x = final.keys
     data[:color].each do |bird_color, names|
         names.each do |bird_name|
-            x.each do |item| 
+            x.each do |item|
                 if bird_name == item
                     final[item][:color] << bird_color.to_s
                 end
