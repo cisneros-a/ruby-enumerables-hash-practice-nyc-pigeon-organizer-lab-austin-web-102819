@@ -12,14 +12,14 @@ def nyc_pigeon_organizer(data)
                 # This assigns every unique name as a key in the "final"
                 # hash. Every key will have a value that is an array. The
                 #arrays have keys for color, gender, and location.
-            end 
-        end 
-    end 
+            end
+        end
+    end
     # At this point we have have our main array and just need to assign
-    # each pigeon its respective data. 
+    # each pigeon its respective data.
     x = final.keys # = ["Theo", "Peter Jr.", "Lucky", "Ms. K", "Queenie", "Andrew", "Alex"]
     data[:color].each do |bird_color, names|
-        #since we want to focus on re-assigning colors this point, we will 
+        #since we want to focus on re-assigning colors this point, we will
         # start breaking down each section starting from the color hash in
         # the data hash. Here we split up the unique colors and the names they
         # are assigned to.
@@ -29,27 +29,27 @@ def nyc_pigeon_organizer(data)
                 if bird_name == item
                     final[item][:color] << bird_color.to_s
                     # at this point, we've assigned each bird in the final
-                    # hash to its color(s). 
-                end 
-            end 
-        end 
+                    # hash to its color(s).
+                end
+            end
+        end
     end
     data[:gender].each do |bird_gender, names|
         names.each do |bird_name|
             x.each do |item|
                 if bird_name == item
                     final[item][:gender] << bird_gender.to_s
-                end 
+                end
             end
         end
-    end 
+    end
     data[:lives].each do |bird_lives, names|
         names.each do |bird_name|
             x.each do |item|
                 if bird_name == item
                     final[item][:location] << bird_lives.to_s
-                end 
-            end 
+                end
+            end
         end
     end
     p final
